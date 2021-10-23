@@ -42,6 +42,8 @@ class DetailViewModel: DetailViewModelProtocol{
     }
     
     func createNotification(notificationCenter: UNUserNotificationCenter){
+        if(todo?.name == nil)
+            {return}
         let not = UNMutableNotificationContent()
         not.title = todo!.name!+" bitti mi bakim?"
         not.body = todo!.name!+" şimdiye kadar bitmeliydi!"
